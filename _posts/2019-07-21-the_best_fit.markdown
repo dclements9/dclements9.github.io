@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "The Best Fit"
-date:       2019-07-22 02:51:40 +0000
+date:       2019-07-21 22:51:41 -0400
 permalink:  the_best_fit
 ---
 
@@ -15,23 +15,23 @@ Rails apps are built with the MVC architecture in mind. The Model is responsible
 
 With usual DRY (Don’t repeat yourself) fashion, it’s best to keep routes from getting unwieldy. Which is when Rails comes in to save the day! Enter namespacing. The routes for this app would look like this: 
 	
-`namespace :admin do
+```namespace :admin do
 resources :equipment, only: [:edit, :update, :new, :create]
-end`
+end```
 	
 Keeping admin access separate from the non-admin controller.
 
 The paired controller would be nested in an admin folder and look like:
 
-`class Admin::EquipmentController < ApplicationController
+```class Admin::EquipmentController < ApplicationController
 def new
 	  # ...
-	end`
+	end```
 	
 	The views would also be nested inside an /admin/equipment folder to keep a separation of concerns from admin and non-admin functionality. With the namespacing all set, other routing paths are provided:
-	`admin_equipment_new_path
+	```admin_equipment_new_path
 	admin_equipment_path
-	#...`
+	#...```
 	
 	Allowing again for the admin to stay separate from the non-admin equipment paths.
 
@@ -39,20 +39,21 @@ def new
 
 	Ultimately, I landed on the simple method, adding functionality to users with the admin attribute. The admin attribute would not be permitted on user creation, preventing random admins from being created:
 	
-`params.require(:user).permit(:email, :name, :password, :password_confirmation)`
+```params.require(:user).permit(:email, :name, :password, :password_confirmation)```
 	
 Links would only be visible if a user was an admin:
-`<%= link_to 'Add Equipment', new_equipment_path unless !current_user.admin? %>`
+```<%= link_to 'Add Equipment', new_equipment_path unless !current_user.admin? %>```
 	
 	
 And before every admin action, it would check again for the user being an admin to avoid the pesky manual url inputs:
-	`before_action :is_admin?, only: [:edit, :update, :new, :create, :destroy]`
+	
+	```before_action :is_admin?, only: [:edit, :update, :new, :create, :destroy]```
 	
 	Which ran this:
 	
-	`def is_admin?
-	`redirect_to equipment_index_path unless current_user.admin?
-	end`
+	```def is_admin?
+	redirect_to equipment_index_path unless current_user.admin?
+	end```
 	
 In the end, the simple implementation felt like the clean, developer friendly way to execute admin functionality. Which is really the goal in the end after solving a client’s or other real world problems.
 
