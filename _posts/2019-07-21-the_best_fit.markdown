@@ -25,7 +25,7 @@ The paired controller would be nested in an admin folder and look like:
 
 ```class Admin::EquipmentController < ApplicationController
 def new
-	  # ...
+	
 	end```
 	
 	The views would also be nested inside an /admin/equipment folder to keep a separation of concerns from admin and non-admin functionality. With the namespacing all set, other routing paths are provided:
@@ -42,6 +42,7 @@ def new
 ```params.require(:user).permit(:email, :name, :password, :password_confirmation)```
 	
 Links would only be visible if a user was an admin:
+
 ```<%= link_to 'Add Equipment', new_equipment_path unless !current_user.admin? %>```
 	
 	
@@ -49,7 +50,7 @@ And before every admin action, it would check again for the user being an admin 
 	
 	```before_action :is_admin?, only: [:edit, :update, :new, :create, :destroy]```
 	
-	Which ran this:
+Which ran this:
 	
 	```def is_admin?
 	redirect_to equipment_index_path unless current_user.admin?
