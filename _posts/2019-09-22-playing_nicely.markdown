@@ -1,9 +1,10 @@
 ---
 layout: post
 title:      "Playing Nicely"
-date:       2019-09-23 03:59:04 +0000
+date:       2019-09-22 23:59:05 -0400
 permalink:  playing_nicely
 ---
+
 
 They say once you’ve learned the concepts of one programming language, the rest are easier to learn. Transitioning from Ruby/Rails to Javascript felt like this, most of the time. But like all languages, Javascript has a few different aspects to get used to.
 
@@ -15,6 +16,6 @@ The big difference came when passing around dates and times. Ruby’s Date DataT
 
 JS has options that range from formatting the timezone to the locale format. Unfortunately, the way JS default decides to store time is not the same way it decides to display it. When creating a new time, JS will UTC, a common standard. When JS displays time, it will you the locale format and TimeZone and typecast the stored time into this format. This creates confusion for the user as the time they selected is not the same as is being displayed.
 
-Eventually after exploring the plethora of options and selections from JS, I went with a simply formatting that kept a standard for the back and front end (.toLocaleString("en-US", {timeZone: "UTC", hour: '2-digit', minute:'2-digit’}).
+Eventually after exploring the plethora of options and selections from JS, I went with a simply formatting that kept a standard for the back and front end (.toLocaleString("en-US", timeZone: "UTC", hour: '2-digit', minute:'2-digit’).
 
-Learning a new programming language after Ruby has been eye opening. Even the small things that are easy concepts can easily trip you up. **Stay on your toes!**
+Learning a new programming language after Ruby has been eye opening. Even the small things that are easy concepts can easily trip you up. *****Stay on your toes!***
