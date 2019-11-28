@@ -13,8 +13,10 @@ A quick and easy way to implement hyperlinks is through anchor element’s href 
 Enter the button. Buttons work well when submitting forms or other actions that require a little more than a simple redirect to more information. During my ‘spruce up the design’ phase of my project, I did a bit of research into styling and CSS. After lots of trial and error, some very… interesting… implementations of style, I came across React Bootstrap. [React Bootstrap Docs](https://react-bootstrap.github.io/ "React Bootstrap Docs") React Bootstrap gives beautiful styling options to simple components like Forms, Loading Spinners, Navbars, etc of which I made great use of. I wanted to keep the styling simple, yet more than the ordinary html elements I had been using. 
 
 In this instance, the React Bootstrap Button caught my eye. [React Bootstrap Button Docs](https://react-bootstrap.github.io/components/buttons/ "React Bootstrap Button ") After playing around with the options, I was quite happy with an overall style to use for my app. In most of the use cases this was perfect. But I had found later on, the Button href elements were not working the same as the Link To elements. At first, it was simply the logo on the Navbar component that wouldn’t load anymore. Later I also noticed when I would use the href Button to view a User show page, the User’s data didn’t show! It still navigated to the correct show user page with the proper id, but without showing data and with no errors displayed on the client or API. So naturally I went to the usual places for debugging, console.log() different steps to see where things were lost, inspecting elements to see where the code differed 
-**Link:** !![](https://imgur.com/a/EYWZOJQ)
-**Button:** ![](https://imgur.com/a/Yms7vjw)
+**Link:** 
+[](https://imgur.com/a/EYWZOJQ)
+**Button:** 
+[](https://imgur.com/a/Yms7vjw)
 
 And of course, Google. With all my findings pointing to the relationship of the  Router Link and the actual routes being the difference, I wondered if there was a way around such a limitation. Surely I could try styling the Link element to look like a button. Turns out that’s just a hyperlink with a silly button box around it…
 
