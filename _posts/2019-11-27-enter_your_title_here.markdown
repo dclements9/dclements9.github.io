@@ -20,7 +20,7 @@ And of course, Google. With all my findings pointing to the relationship of the 
 
 To save the trouble of rehashing each iteration of trial and error, I present LinkContainer. [LinkContainer - Github](https://github.com/react-bootstrap/react-router-bootstrap "LinkContainer - Github") This properly wraps the react bootstrap Button with a Container Link to act just like a Router Link element. After a very quick import and inclusion via npm, Voila! Links were no longer ugly and buttons could properly link!
 
-I don’t write this to push looking for a solution someone else has made instead of finding the solution yourself. But sometimes, that really is the case. In this instance, my take away was more that I followed the very tiny bread crumbs to the true problem. Once I understand what the true issue was, I could find a solution that not only properly fixed the problem, but wouldn’t have to be overkill or degrade performance for unknown reasons. This was a perfect reminder of how I love the process of diving ever deeper into an issue to find out the root cause and a workable solution.
+I don’t write this to push looking for a solution someone else has made instead of finding the solution yourself. But sometimes, that really is the case. In this instance, my take away was more that I followed the very tiny bread crumbs to the true problem. Once I understood what the true issue was, I could find a solution that not only properly fixed the problem, but wouldn’t be overkill or degrade performance for unknown reasons. This was a perfect reminder of how I love the process of diving ever deeper into an issue to find out the root cause and a workable solution.
 
 
 
